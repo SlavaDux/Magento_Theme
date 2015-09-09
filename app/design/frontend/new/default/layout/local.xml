@@ -24,12 +24,27 @@
                 <block type="core/template" name="top.search" as="topSearch" template="catalogsearch/form.mini.phtml"/>
             </block>
 
+            <block type="core/template" name="home-page-content" as="home-page-content" translate="label">
+                <action method="setTemplate"><template>page/html/home-page-content.phtml</template></action>
+            </block>
+
             <block type="core/text_list" name="content" as="content" translate="label">
 
             </block>
 
             <block type="page/html_footer" name="footer" as="footer" template="page/html/footer.phtml">
-
+                <block type="core/template" name="footer-information-links" as="footer-information-links">
+                    <action method="setTemplate"><template>page/html/footer/footer-information-links.phtml</template></action>
+                </block>
+                <block type="core/template" name="footer-buy-links" as="footer-buy-links">
+                    <action method="setTemplate"><template>page/html/footer/footer-buy-links.phtml</template></action>
+                </block>
+                <block type="core/template" name="footer-account-links" as="footer-account-links">
+                    <action method="setTemplate"><template>page/html/footer/footer-account-links.phtml</template></action>
+                </block>
+                <block type="core/template" name="footer-contacts-links" as="footer-contacts-links">
+                    <action method="setTemplate"><template>page/html/footer/footer-contacts-links.phtml</template></action>
+                </block>
             </block>
         </block>
     </default>

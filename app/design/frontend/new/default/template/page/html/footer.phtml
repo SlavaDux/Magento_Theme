@@ -1,1 +1,26 @@
-<h1>footer</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <?php echo $this->getChildHtml('footer-information-links'); ?>
+        </div>
+        <div class="col-md-3">
+            <?php echo $this->getChildHtml('footer-buy-links'); ?>
+        </div>
+        <div class="col-md-3">
+            <?php echo $this->getChildHtml('footer-account-links'); ?>
+        </div>
+        <div class="col-md-3">
+            <?php echo $this->getChildHtml('footer-contacts-links'); ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p class="copyright">
+                <?php
+                    $storeCopyright = Mage::getStoreConfig("design/footer/copyright");
+                    echo $storeCopyright;
+                ?>
+            </p>
+        </div>
+    </div>
+</div>
