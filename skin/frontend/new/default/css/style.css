@@ -1,9 +1,193 @@
+body {
+    background-color: #f2f2f2;
+    padding-bottom: 20px;
+}
+
+/* style for header */
+.header-logo {
+    padding-right: 0;
+}
 .logo {
     background-color: #6fcfbc;
     height: 142px;
-    width: 170px;
+    padding-right: 0;
+    font: 400 47.78px / 16px Bauhaus93;
+    text-align: center;
+    line-height: 142px;
+    color: #ffffff;
 }
+.header-top {
+    margin-top: 32px;
+}
+.header-registration-top-links li a {
+    text-decoration: none;
+    color: #535355;
+}
+.header-registration-top-links li, .form-language label {
+    font: 400 14px / 30px OpenSans;
+    color: #535355;
+}
+.form-language #select-language {
+    font: 600 14px / 30px OpenSans;
+    color: #1ebd9d;
+    border: none;
+    background-color: #f2f2f2;
+}
+.header-links {
+    background-color: #535355;
+    height: 49px;
+}
+.header-links .log-text {
+    font: 400 14px / 49px OpenSans;
+    color: #edf1f2;
+    padding-left: 20px;
+}
+.header-links .header-menu-top-links {
+    font: 600 12px / 49px OpenSans;
+    padding-right: 20px;
+}
+.header-links .header-menu-top-links ul {
+    margin-bottom: 0;
+}
+.header-links .header-menu-top-links a {
+    color: #edf1f2;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-left: 20px;
+}
+.header-content {
+    background-color: #ffffff;
+    margin: 0;
+}
+.header-search-menu {
+    padding-left: 0;
+}
+.header-content .search {
+    background-color: #f2f2f2;
+}
+.header-search-form {
+    padding: 10px;
+}
+.header-form-search-input {
+    padding-right: 0;
+}
+.header-form-input{
+    border-radius: 0;
+}
+.header-form-search-submit {
+    padding-left: 0;
+    height: 32px;
+    line-height: 32px;
+}
+.header-form-btn-search {
+    padding: 0 20px;
+    line-height: 32px;
+    width: 100%;
+    font: 600 12px / 30px OpenSans;
+    color: #edf1f2;
+    text-transform: uppercase;
+    background-color: #535355;
+    border-color: rgba(255, 222, 173, 0);
+    border-radius: 0;
+}
+.main-menu #nav {
+    float: right;
+    padding: 0 10px;
+}
+.main-menu .nav li a{
+    font: 600 18px / 30px OpenSans;
+    color: #535355;
+}
+.dropdown-first li a:hover {
+    background-color: #ffffff;
+}
+.dropdown-first .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: #ffffff;
+}
+.dropdawn-nav-menu {
+    background-color: #f3f3f3;
+}
+.dropdawn-nav-menu li a:hover {
+    background-color: #6fcfbc;
+}
+.dropdown-submenu {
+    position: relative;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+    position: absolute;
+    left: 90%;
+    top: 10px;
+}
+
+/* style for content */
 .free-shipping {
     background-color: #f59d05;
     height: 130px;
+}
+.home-page-first-line {
+    margin: 0;
+    padding: 20px 10px;
+    background-color: #ffffff;
+}
+.home-page-second-line {
+    margin: 0;
+    padding: 0 10px 30px 10px;
+    background-color: #ffffff;
+}
+.home-page-first-line img, .home-page-second-line img {
+    width: 100%;
+}
+.img-shoes {
+    margin-top: 35px;
+}
+/* style for footer */
+.footer-first-line {
+    margin: 0;
+    padding: 0 10px 20px 10px;
+    background-color: #ffffff;
+}
+.footer-information-links {
+    padding-right: 0;
+}
+.footer-buy-links, .footer-account-links {
+    padding-left: 0;
+    padding-right: 0;
+}
+.footer-contacts-links {
+    padding-left: 0;
+}
+footer h3 {
+    border-top: 1px solid #9b9b9b;
+    padding-top: 20px;
+    margin-top: 0;
+    font: 600 16px / 30px OpenSans;
+    color: #585858;
+    text-transform: uppercase;
+}
+footer ul li a {
+    font: 400 14px / 24px OpenSans;
+    color: #b0b0b0;
+    text-decoration: none;
+}
+footer ul li a:hover {
+    font: 600 14px / 24px OpenSans;
+    color: #1ebd9d;
+    text-decoration: none;
+}
+.footer-tel {
+    font: 400 18px / 30px Bebas;
+    color: #1ebd9d;
+    text-transform: uppercase;
+}
+.footer-second-line {
+    margin: 0;
+    padding: 0 10px 5px 10px;
+    background-color: #ffffff;
+}
+.copyright {
+    padding: 10px 10px 0 10px;
+    border-top: 1px solid #b0b0b0;
+    font: 400 14px / 30px OpenSans;
+    color: #9b9b9b;
 }

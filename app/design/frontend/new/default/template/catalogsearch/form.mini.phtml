@@ -4,11 +4,16 @@
 $catalogSearchHelper =  $this->helper('catalogsearch');
 ?>
 
-<form id="search_mini_form" action="<?php echo $catalogSearchHelper->getResultUrl() ?>" method="get">
-    <div class="input-box">
-        <label for="search"><?php echo $this->__('Search:') ?></label>
-        <input id="search" type="search" name="<?php echo $catalogSearchHelper->getQueryParamName() ?>" value="<?php echo $catalogSearchHelper->getEscapedQueryText() ?>" class="input-text required-entry" maxlength="<?php echo $catalogSearchHelper->getMaxQueryLength();?>" placeholder="<?php echo $this->__('Search entire store here...') ?>" />
-        <button type="submit" title="<?php echo $this->__('Search') ?>" class="button search-button"><span><span><?php echo $this->__('Search') ?></span></span></button>
+<form id="search_mini_form" class="form-horizontal" action="<?php echo $catalogSearchHelper->getResultUrl() ?>" method="get">
+    <div class="form-group header-search-form">
+        <div class="col-md-10 header-form-search-input">
+            <input id="search" type="search" class="form-control header-form-input" name="<?php echo $catalogSearchHelper->getQueryParamName() ?>" value="<?php echo $catalogSearchHelper->getEscapedQueryText() ?>" class="input-text required-entry" maxlength="<?php echo $catalogSearchHelper->getMaxQueryLength();?>" placeholder="<?php echo $this->__('Search entire store here...') ?>" />
+        </div>
+        <div class="col-md-2 header-form-search-submit">
+            <button type="submit" title="<?php echo $this->__('Search') ?>" class="btn btn-default header-form-btn-search">
+                <?php echo $this->__('Search'); ?>
+            </button>
+        </div>
     </div>
 
     <div id="search_autocomplete" class="search-autocomplete"></div>

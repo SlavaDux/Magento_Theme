@@ -2,7 +2,8 @@
     <default>
         <block type="page/html" name="root" output="toHtml" template="page/1column.phtml">
             <block type="page/html_head" name="head" as="head">
-                <action method="addJs"><script>js/bootstrap.js</script></action>
+                <action method="addJs"><script>lib/jquery/jquery-1.10.2.min.js</script></action>
+                <action method="addItem"><type>skin_js</type><name>js/bootstrap.js</name></action>
                 <action method="addItem"><type>skin_css</type><name>css/bootstrap/bootstrap.css</name></action>
                 <action method="addItem"><type>skin_css</type><name>css/style.css</name></action>
             </block>
