@@ -9,9 +9,10 @@
 }
 .header-logo {
     padding-right: 0;
+    width: 170px;
+    height: 142px;
 }
 .logo {
-    background-color: #6fcfbc;
     height: 142px;
     width: 170px;
     padding-right: 0;
@@ -64,10 +65,11 @@
     margin: 0;
 }
 .header-search-menu {
-    padding-left: 3px;
+    padding-right: 0;
 }
 .header-content .search {
     background-color: #f2f2f2;
+    margin-right: 2px;
 }
 .header-search-form {
     padding: 10px;
@@ -91,7 +93,8 @@
     border: none;
 }
 .header-form-search-submit .header-form-btn-search {
-    padding: 1px 20px;
+    padding: 1px 15px;
+    margin: -2px 0 0 -4px;
     line-height: 32px;
     font: 600 12px / 30px 'open_sansregular';
     color: #edf1f2;
@@ -102,6 +105,10 @@
 }
 .header-form-search-submit .header-form-btn-search:hover {
     background-color: #737375;
+}
+.header-search-menu .main-menu {
+    height: 90px;
+    padding: 15px 0;
 }
 .header-search-menu .main-menu #nav {
     float: right;
