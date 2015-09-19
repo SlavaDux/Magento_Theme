@@ -1,0 +1,47 @@
+<?php
+/** @var Mage_Page_Block_Html_Topmenu_Renderer $this */
+/** @var Varien_Data_Tree_Node $menuTree */
+/** @var string $childrenWrapClass */
+?>
+<?php
+$children = $menuTree->getChildren();
+?>
+<?php foreach ($children as $child): ?>
+    <?php if ($child->hasChildren()): ?>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $child->getName(); ?> <span class="caret"></span></a>
+            <ul class="dropdown-menu dropdawn-nav-menu">
+                <?php $grandChildren = $child->getChildren(); ?>
+                <?php foreach ($grandChildren as $grandChild): ?>
+                    <?php if ($grandChild->hasChildren()): ?>
+                        <li class="dropdown-submenu">
+                            <a href="#"><?php echo $child->getName(); ?> <span class="caret"></span></a>
+                            <ul class="dropdown-menu dropdawn-nav-menu dropdawn-thirt-menu">
+                                <?php $grandGrandChildren = $grandChild->getChildren(); ?>
+                                <?php foreach ($grandGrandChildren as $grandGrandChild): ?>
+                                    <li>
+                                        <a href="<?php echo $grandGrandChild->getUrl(); ?>">
+                                            <?php echo $grandGrandChild->getName(); ?>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </li>
+                    <?php else: ?>
+                        <li>
+                            <a href="<?php echo $grandChild->getUrl(); ?>">
+                                <?php echo $grandChild->getName(); ?>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </ul>
+        </li>
+    <?php else: ?>
+        <li>
+            <a href="<?php echo $child->getUrl(); ?>">
+                <?php echo $child->getName(); ?>
+            </a>
+        </li>
+    <?php endif; ?>
+<?php endforeach; ?>

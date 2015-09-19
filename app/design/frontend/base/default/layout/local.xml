@@ -1,0 +1,11 @@
+<layout version="0.1.0">
+    <cms_index_index>
+
+        <reference name="content">
+            <block type="core/template" name="home-page-content" as="home-page-content" translate="label">
+                <action method="setTemplate"><template>page/html/home-page-content.phtml</template></action>
+            </block>
+        </reference>
+
+    </cms_index_index>
+</layout>
