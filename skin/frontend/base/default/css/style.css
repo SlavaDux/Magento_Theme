@@ -11,6 +11,9 @@
     background-color: #ffffff;
     padding: 20px !important;
 }
+.content-block {
+    margin: -20px;
+}
 .header-logo {
     padding-right: 0;
     width: 170px;
