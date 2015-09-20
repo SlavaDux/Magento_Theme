@@ -9,14 +9,14 @@ $children = $menuTree->getChildren();
 <?php foreach ($children as $child): ?>
     <?php if ($child->hasChildren()): ?>
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $child->getName(); ?> <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle"><?php echo $child->getName(); ?> <span class="caret"></span></a>
             <ul class="dropdown-menu dropdawn-nav-menu">
                 <?php $grandChildren = $child->getChildren(); ?>
                 <?php foreach ($grandChildren as $grandChild): ?>
                     <?php if ($grandChild->hasChildren()): ?>
                         <li class="dropdown-submenu">
                             <a href="#"><?php echo $child->getName(); ?> <span class="caret"></span></a>
-                            <ul class="dropdown-menu dropdawn-nav-menu dropdawn-thirt-menu">
+                            <ul class="dropdown-menu  dropdawn-third-menu">
                                 <?php $grandGrandChildren = $grandChild->getChildren(); ?>
                                 <?php foreach ($grandGrandChildren as $grandGrandChild): ?>
                                     <li>
@@ -45,3 +45,13 @@ $children = $menuTree->getChildren();
         </li>
     <?php endif; ?>
 <?php endforeach; ?>
+<script type="text/javascript">
+    $j(".dropdown-toggle").on("mouseup", function() {
+        var ourMenu = $j(this).next();
+        ourMenu.toggle();
+        $j(".dropdawn-nav-menu").not(ourMenu).hide();
+    });
+    $j(".dropdawn-nav-menu").on('mouseleave', function() {
+        $j(this).hide();
+    });
+</script>
