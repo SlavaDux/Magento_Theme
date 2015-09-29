@@ -1,0 +1,12 @@
+<h1>Testimonials</h1>
+<?php
+    $posts = $this->getTestimonialsCollection();
+    foreach ($posts as $testimonials):
+?>
+    <p>
+        <?php echo $testimonials->getContent(); ?>
+    </p>
+    <h3>
+        <?php echo $testimonials->getAuthor(); ?>
+    </h3>
+<?php endforeach; ?>

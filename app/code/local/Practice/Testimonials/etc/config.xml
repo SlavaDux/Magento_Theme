@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Practice_Testimonials>
+            <version>0.0.1</version>
+        </Practice_Testimonials>
+    </modules><!--registration module-->
+    <global>
+        <blocks>
+            <practicetestimonials>
+                <class>Practice_Testimonials_Block</class>
+            </practicetestimonials>
+        </blocks><!-- add block -->
+        <models>
+            <practicetestimonials>
+                <class>Practice_Testimonials_Model</class>
+                <resourceModel>practicetestimonials_resource</resourceModel>
+            </practicetestimonials>
+            <practicetestimonials_resource>
+                <class>Practice_Testimonials_Model_Resource</class>
+                <entities>
+                    <testimonials>
+                        <table>testimonials</table>
+                    </testimonials>
+                </entities>
+            </practicetestimonials_resource>
+        </models><!--name of new table-->
+        <resources>
+            <practicetestimonials_setup>
+                <setup>
+                    <module>Practice_Testimonials</module>
+                    <class>Practice_Testimonials_Model_Resource_Setup</class>
+                </setup>
+            </practicetestimonials_setup>
+        </resources>
+    </global><!--add setup db-->
+    <frontend>
+        <layout>
+            <updates>
+                <practicetestimonials>
+                    <file>practice_testimonials.xml</file>
+                </practicetestimonials>
+            </updates>
+        </layout><!--layout for page testimonials-->
+        <routers>
+            <practicetestimonials>
+                <use>standard</use>
+                <args>
+                    <module>Practice_Testimonials</module>
+                    <frontName>testimonials</frontName>
+                </args>
+            </practicetestimonials>
+        </routers>
+    </frontend><!--registration controllers-->
+</config>

@@ -8,4 +8,17 @@
         </reference>
 
     </cms_index_index>
+    <customer_logged_in>
+        <reference name="top.links">
+            <action method="addLink" translate="label">
+                <label>Testimonials</label>
+                <!--<url helper="moduleName/getIndexUrl" />-->
+                <url>http://magentoslava/testimonials/</url>
+                <title>Testimonials</title>
+                <prepare/>
+                <urlParams/>
+                <position>50</position>
+            </action>
+        </reference>
+    </customer_logged_in>
 </layout>
