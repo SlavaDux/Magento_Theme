@@ -6,6 +6,11 @@
         </Practice_Testimonials>
     </modules><!--registration module-->
     <global>
+        <helpers>
+            <practicetestimonials>
+                <class>Practice_Testimonials_Helper</class>
+            </practicetestimonials>
+        </helpers><!-- add helper -->
         <blocks>
             <practicetestimonials>
                 <class>Practice_Testimonials_Block</class>
@@ -52,4 +57,24 @@
             </practicetestimonials>
         </routers>
     </frontend><!--registration controllers-->
+    <adminhtml>
+        <menu>
+            <practicetestimonials module="practicetestimonials">
+                <title>Testimonials</title>
+                <sort_order>100</sort_order>
+                <action>practicetestimonials_admin/adminhtml_testimonials</action>
+            </practicetestimonials>
+        </menu>
+    </adminhtml><!-- add menu item for module in admin -->
+    <admin>
+        <routers>
+            <practicetestimonials_admin>
+                <use>admin</use>
+                <args>
+                    <module>Practice_Testimonials</module>
+                    <frontName>testimonials_admin</frontName>
+                </args>
+            </practicetestimonials_admin>
+        </routers>
+    </admin><!--registration admin controller-->
 </config>

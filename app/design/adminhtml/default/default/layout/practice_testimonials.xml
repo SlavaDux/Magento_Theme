@@ -1,0 +1,7 @@
+<layout version="0.1.0">
+    <adminhtml_practicetestimonials_index>
+        <reference name="content">
+            <block type="practicetestimonials/adminhtml_testimonials" name="testimonials-content" template="practice_testimonials/testimonials.phtml" />
+        </reference>
+    </adminhtml_practicetestimonials_index>
+</layout>
