@@ -7,7 +7,7 @@ class Practice_Testimonials_Block_Adminhtml_Testimonials_Grid extends Mage_Admin
         $this->setDefaultDir('DESC');
     }
     protected function _prepareCollection() {
-        $collection = Mage::getModel('practicetestimonials/testimonials')->getCollection();
+        $collection = Mage::getResourceModel('practicetestimonials/testimonials')->getCollection();
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
