@@ -15,21 +15,38 @@ class Practice_Testimonials_Block_Adminhtml_Testimonials_Grid extends Mage_Admin
         $helper = Mage::helper('practicetestimonials');
         $this->addColumn('testimonials_id', array(
             'header' => $helper->__('Id'),
-            'index' => 'testimonials_id'
+            'index' => 'testimonials_id',
+            'width' => '60px',
         ));
         $this->addColumn('author', array(
             'header' => $helper->__('Author'),
             'index' => 'author',
-            'type' => 'text',
+            'type' => 'options',
+            'width' => '300px',
+            'options' => Mage::getModel('practicetestimonials/testimonials')->getOptionArray()
         ));
         $this->addColumn('content', array(
             'header' => $helper->__('Content'),
             'index' => 'content',
-            'type' => 'text',
+            'type' => 'text'
         ));
         return parent::_prepareColumns();
     }
-    public function getGridUrl() {
-        return $this->getUrl('*/*/grid', array('_current'=>true));
+    protected function _prepareMassaction() {
+        $this->setMassactionIdField('testimonials_id');
+        $this->getMassactionBlock()->setFormFieldName('testimonials');
+
+        $this->getMassactionBlock()->addItem('delete', array(
+            'label' => $this->__('Delete'),
+            'url' => $this->getUrl('*/*/massDelete'),
+            'confirm' => Mage::helper('practicetestimonials')->__('Are you sure?')
+        ));
+        return $this;
+    }
+
+    public function getRowUrl($model) {
+        return $this->getUrl('*/*/edit', array(
+            'id' => $model->getId(),
+        ));
     }
 }

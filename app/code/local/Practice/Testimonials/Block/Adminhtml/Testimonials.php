@@ -6,6 +6,6 @@ class Practice_Testimonials_Block_Adminhtml_Testimonials extends Mage_Adminhtml_
         $this->_controller = 'adminhtml_testimonials';
         $this->_headerText = $helper->__('Testimonials Management');
         parent::__construct();
-        $this->_addButtonLabel = $helper->__('Add Testimonials');
+//        $this->_addButtonLabel = $helper->__('Add Testimonials');
     }
 }
