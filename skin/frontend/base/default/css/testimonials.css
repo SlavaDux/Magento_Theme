@@ -42,6 +42,14 @@
 .top .testimonials_block_form .form-button .form-close {
     float: left;
 }
+.top .testimonials_block_form .form-close {
+    background-color: rgb(221, 221, 221);
+    border-color: rgba(0, 0, 0, 0);
+    color: rgb(99, 99, 99);
+}
+.top .testimonials_block_form .form-close:hover {
+    color: rgb(63, 63, 63);
+}
 .testimonials p, .testimonials h5 {
     font-family: 'open_sansregular';
 }
