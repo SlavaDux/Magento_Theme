@@ -1,7 +1,17 @@
 <layout version="0.1.0">
     <practicetestimonials_index_index>
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
+        </reference>
+
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/testimonials.js</name></action>
+        </reference>
+
         <reference name="content">
             <block type="practicetestimonials/testimonials" name="testimonials-content" as="testimonials-content" template="practice_testimonials/index.phtml" />
         </reference>
+
     </practicetestimonials_index_index>
 </layout>

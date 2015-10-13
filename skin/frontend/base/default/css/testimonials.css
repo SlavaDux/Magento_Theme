@@ -1,0 +1,105 @@
+/* style for top block */
+.top h1 {
+    float: left;
+    margin-bottom: 0;
+    font-family: 'open_sansregular';
+    font-weight: bolder;
+    font-size: 25px;
+    color: #535355;
+}
+.top .testimonials_form {
+    float: right;
+    position: relative;
+}
+.top .testimonials_form .submit-testimonials {
+    border-radius: 0;
+    background-color: #1ebd9d;
+    color: #fff;
+    text-transform: uppercase;
+}
+.top .testimonials_block_form {
+    position: absolute;
+    top: 50px;
+    left: 130px;
+    height: auto;
+    width: 300px;
+    padding: 10px;
+    box-shadow: 0 0 10px #000;
+    background-color: #fff;
+    z-index: 100;
+}
+.top .testimonials_block_form fieldset ul li label {
+    font: 800 14px / 30px 'open_sansregular';
+    color: #535355;
+    margin: 5px 0 0 0;
+}
+.top .testimonials_block_form .form-button {
+    margin-top: 10px;
+}
+.top .testimonials_block_form .form-button .button-submit {
+    float: right;
+}
+.top .testimonials_block_form .form-button .form-close {
+    float: left;
+}
+.testimonials p, .testimonials h5 {
+    font-family: 'open_sansregular';
+}
+.testimonials .testimonials-content {
+    background-color: #f2f2f2;
+    padding: 20px 15px;
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+.testimonials .testimonials-author {
+    text-transform: none;
+    padding-left: 15px;
+}
+.testimonials .triangle-down {
+    margin-left: 30px;
+    margin-bottom: 10px;
+    width: 0;
+    height: 0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 15px solid #f2f2f2;
+}
+.pager-testimonials .pager {
+    width: 100%;
+    padding: 0 5px;
+}
+.pager-amount-limiter {
+    float: left;
+}
+.pager-pages {
+    float: right;
+}
+.pager-testimonials .pager p {
+    font: 400 14px / 30px 'open_sansregular';
+}
+.pager-testimonials .pager .limiter label {
+    text-transform: uppercase;
+    font: 400 14px / 30px 'open_sansregular';
+}
+.pager-testimonials .pager .limiter select {
+    border-radius: 5px;
+    font: 400 14px / 30px 'open_sansregular';
+}
+.pager-testimonials .pager .pager-pages .pages ol li a {
+    font: 400 14px / 31px 'open_sansregular';
+    color: #1ebd9d;
+    border: none;
+    padding: 0 5px;
+    width: 25px;
+}
+.pager-testimonials .pager .pager-pages .pages ol li a:hover,
+.pager-testimonials .pager .pager-pages .pages ol li a:focus {
+    color: #636363;
+    background-color: #fff;
+}
+.pager-testimonials .pager .pager-pages .pages p {
+    margin: 0 5px;
+    font-size: 13px;
+    font-weight: bold;
+}
+

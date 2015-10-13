@@ -1,12 +1,51 @@
-<h1>Testimonials</h1>
-<?php
-    $posts = $this->getTestimonialsCollection();
-    foreach ($posts as $testimonials):
-?>
-    <p>
-        <?php echo $testimonials->getContent(); ?>
-    </p>
-    <h3>
-        <?php echo $testimonials->getAuthor(); ?>
-    </h3>
-<?php endforeach; ?>
+<div class="top">
+    <h1><?php echo $this->__('Testimonials'); ?></h1>
+    <div class="testimonials_form">
+        <button type="button" class="btn submit-testimonials"><?php echo $this->__('Submit your Testimonial'); ?></button>
+        <div class="testimonials_block_form">
+            <p><?php echo $this->__('your testimonials ..'); ?></p>
+            <form action="<?php echo Mage::getUrl('testimonials/index/save') ?>" id="my-custom-form" method="post">
+                <fieldset>
+                    <ul>
+                        <li>
+                            <label for="author"><?php echo $this->__('Author:'); ?></label>
+                            <input type="text" class="form-control input-text required-entry" id="author" name="author" />
+                        </li>
+                        <li>
+                            <label for="content"><?php echo $this->__('Testimonial:'); ?></label>
+                            <textarea type="text" id="content" name="content" class="form-control input-text required-entry" rows="3"></textarea>
+                        </li>
+                        <li class="form-button">
+                            <button type="submit" value="Save" class="btn button-submit"><?php echo $this->__('Submit'); ?></button>
+                            <button class="btn form-close">Close</button>
+                        </li>
+                    </ul>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="testimonials">
+    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+    <?php $collection = $this->getCollection(); ?>
+    <?php if($collection->getSize()): ?>
+        <?php foreach ($collection as $testimonial): ?>
+            <p class="testimonials-content">
+                <?php echo $testimonial->getContent(); ?>
+            </p>
+            <div class="triangle-down"></div>
+            <h5 class="testimonials-author">
+                <?php echo $testimonial->getAuthor(); ?>
+            </h5>
+        <?php endforeach; ?>
+        <?php echo $this->getPagerHtml(); ?>
+    <?php else: ?>
+        <p><?php echo $this->__('The collection is empty.'); ?></p>
+    <?php endif ?>
+</div>
+<script type="text/javascript">
+    //< ![CDATA[
+    var customForm = new VarienForm('my-custom-form');
+    //]]>
+</script>
