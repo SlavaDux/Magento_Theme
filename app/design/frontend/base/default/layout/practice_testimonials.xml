@@ -14,16 +14,4 @@
         </reference>
 
     </practicetestimonials_index_index>
-    <customer_logged_in>
-        <reference name="top.links">
-            <action method="addLink" translate="label" module="practicetestimonials">
-                <label>Testimonials</label>
-                <url>testimonials</url>
-                <urlParams helper="practicetestimonials/getTestimonialsUrl"/>
-                <title>Testimonials</title>
-                <prepare/>
-                <position>50</position>
-            </action>
-        </reference>
-    </customer_logged_in>
 </layout>

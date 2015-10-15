@@ -3,25 +3,38 @@
     <div class="testimonials_form">
         <button type="button" class="btn submit-testimonials"><?php echo $this->__('Submit your Testimonial'); ?></button>
         <div class="testimonials_block_form">
-            <p><?php echo $this->__('your testimonials ..'); ?></p>
-            <form action="<?php echo Mage::getUrl('testimonials/index/save') ?>" id="my-custom-form" method="post">
-                <fieldset>
-                    <ul>
-                        <li>
-                            <label for="author"><?php echo $this->__('Author:'); ?></label>
-                            <input type="text" class="form-control input-text required-entry" id="author" name="author" />
-                        </li>
-                        <li>
-                            <label for="content"><?php echo $this->__('Testimonial:'); ?></label>
-                            <textarea type="text" id="content" name="content" class="form-control input-text required-entry" rows="3"></textarea>
-                        </li>
-                        <li class="form-button">
-                            <button type="submit" value="Save" class="btn button-submit"><?php echo $this->__('Submit'); ?></button>
-                            <a class="btn btn-default form-close">Close</a>
-                        </li>
-                    </ul>
-                </fieldset>
-            </form>
+            <?php if(!Mage::getSingleton('customer/session')->isLoggedIn()): ?>
+                <div class="login-info">
+                    <p>
+                        <?php echo $this->__('Please'); ?>
+                        <a href="<?php echo Mage::getBaseUrl() . "customer/account/login/"; ?>">
+                            <?php echo $this->__('Login'); ?>
+                        </a>
+                        <?php echo $this->__('to add new testimonials'); ?>
+                    </p>
+                </div>
+                <a class="btn btn-default form-close">Close</a>
+            <?php else: ?>
+                <p><?php echo $this->__('your testimonials ..'); ?></p>
+                <form action="<?php echo Mage::getUrl('testimonials/index/save') ?>" id="my-custom-form" method="post">
+                    <fieldset>
+                        <ul>
+                            <li>
+                                <label for="author"><?php echo $this->__('Author:'); ?></label>
+                                <input type="text" class="form-control input-text required-entry" id="author" name="author" />
+                            </li>
+                            <li>
+                                <label for="content"><?php echo $this->__('Testimonial:'); ?></label>
+                                <textarea type="text" id="content" name="content" class="form-control input-text required-entry" rows="3"></textarea>
+                            </li>
+                            <li class="form-button">
+                                <button type="submit" value="Save" class="btn button-submit"><?php echo $this->__('Submit'); ?></button>
+                                <a class="btn btn-default form-close">Close</a>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </form>
+            <?php endif ?>
         </div>
     </div>
 </div>
