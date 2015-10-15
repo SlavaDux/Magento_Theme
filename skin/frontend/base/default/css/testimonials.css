@@ -33,6 +33,10 @@
     color: #535355;
     margin: 5px 0 0 0;
 }
+.top .testimonials_block_form fieldset ul li input,
+.top .testimonials_block_form fieldset ul li textarea {
+    width: 280px;
+}
 .top .testimonials_block_form .form-button {
     margin-top: 10px;
 }
