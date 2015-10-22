@@ -18,17 +18,24 @@ class Practice_Testimonials_Block_Adminhtml_Testimonials_Grid extends Mage_Admin
             'index' => 'testimonials_id',
             'width' => '60px',
         ));
-        $this->addColumn('author', array(
-            'header' => $helper->__('Author'),
-            'index' => 'author',
-            'type' => 'options',
-            'width' => '300px',
-            'options' => Mage::getModel('practicetestimonials/testimonials')->getOptionArray()
-        ));
+//        $this->addColumn('author', array(
+//            'header' => $helper->__('Author'),
+//            'index' => 'author',
+//            'type' => 'options',
+//            'width' => '300px',
+//            'options' => Mage::getModel('practicetestimonials/testimonials')->getOptionArray()
+//        ));
         $this->addColumn('content', array(
             'header' => $helper->__('Content'),
             'index' => 'content',
             'type' => 'text'
+        ));
+        $this->addColumn('author', array(
+            'header' => $helper->__('Author'),
+            'index' => 'customer_id',
+            'options' => $helper->getAuthorsList(),
+            'type'  => 'options',
+            'width' => '150px'
         ));
         return parent::_prepareColumns();
     }

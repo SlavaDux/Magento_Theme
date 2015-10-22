@@ -15,13 +15,14 @@
                 </div>
                 <a class="btn btn-default form-close">Close</a>
             <?php else: ?>
+                <?php $name = Mage::getSingleton('customer/session')->getCustomer()->getName(); ?>
                 <p><?php echo $this->__('your testimonials ..'); ?></p>
                 <form action="<?php echo Mage::getUrl('testimonials/index/save') ?>" id="my-custom-form" method="post">
                     <fieldset>
                         <ul>
                             <li>
                                 <label for="author"><?php echo $this->__('Author:'); ?></label>
-                                <input type="text" class="form-control input-text required-entry" id="author" name="author" />
+                                <input type="text" class="form-control input-text required-entry" id="author" value="<?php echo $name; ?>" name="author" />
                             </li>
                             <li>
                                 <label for="content"><?php echo $this->__('Testimonial:'); ?></label>

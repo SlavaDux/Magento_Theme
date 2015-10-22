@@ -15,15 +15,21 @@ class Practice_Testimonials_Block_Adminhtml_Testimonials_Edit_Form extends Mage_
         $fieldset = $form->addFieldset('testimonials_form', array(
             'legend' => $helper->__('Testimonials Information')
         ));
-        $fieldset->addField('author', 'text', array(
-            'label' => $helper->__('Author'),
-            'required' => true,
-            'name' => 'author'
-        ));
+//        $fieldset->addField('author', 'text', array(
+//            'label' => $helper->__('Author'),
+//            'required' => true,
+//            'name' => 'author'
+//        ));
         $fieldset->addField('content', 'editor', array(
             'label' => $helper->__('Content'),
             'required' => true,
             'name' => 'content'
+        ));
+        $fieldset->addField('author', 'select', array(
+            'label' => $helper->__('Author'),
+            'required' => true,
+            'name' => 'customer_id',
+            'values' => $helper->getAuthorsOptions()
         ));
         $form->setUseContainer(true);
         if($data = Mage::getSingleton('adminhtml/session')->getFormData()){

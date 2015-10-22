@@ -6,11 +6,15 @@ class Practice_Testimonials_IndexController extends Mage_Core_Controller_Front_A
     }
     public function saveAction() {
         $author = $this->getRequest()->getPost('author');
+        $author2 = $this->getRequest()->getPost('author');
         $content = $this->getRequest()->getPost('content');
         if(isset($author)&&($content!='') && isset($content)&&($author!='')) {
             $contact = Mage::getModel('practicetestimonials/testimonials');
             $contact->setData('author', $author);
             $contact->setData('content', $content);
+            $contact->save();
+            $contact = Mage::getModel('practicetestimonials/authors');
+            $contact->setData('author', $author2);
             $contact->save();
         }
         $this->_redirect('testimonials/index/index');
