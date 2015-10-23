@@ -21,12 +21,12 @@
                     <fieldset>
                         <ul>
                             <li>
-                                <label for="author"><?php echo $this->__('Author:'); ?></label>
-                                <input type="text" class="form-control input-text required-entry" id="author" value="<?php echo $name; ?>" name="author" />
+                                <label for="customer_id"><?php echo $this->__('Author:'); ?></label>
+                                <input type="text" class="form-control input-text" id="author" value="<?php echo $name; ?>" name="customer_id" />
                             </li>
                             <li>
                                 <label for="content"><?php echo $this->__('Testimonial:'); ?></label>
-                                <textarea type="text" id="content" name="content" class="form-control input-text required-entry" rows="3"></textarea>
+                                <textarea type="text" id="content" name="content" class="form-control input-text" rows="3"></textarea>
                             </li>
                             <li class="form-button">
                                 <button type="submit" value="Save" class="btn button-submit"><?php echo $this->__('Submit'); ?></button>
@@ -50,7 +50,7 @@
             </p>
             <div class="triangle-down"></div>
             <h5 class="testimonials-author">
-                <?php echo $testimonial->getAuthor(); ?>
+                <?php echo $testimonial->getCustomerId(); ?>
             </h5>
         <?php endforeach; ?>
         <?php echo $this->getPagerHtml(); ?>

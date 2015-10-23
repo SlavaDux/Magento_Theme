@@ -1,15 +1,15 @@
 <?php
 class Practice_Testimonials_Helper_Data extends Mage_Core_Helper_Abstract {
     public function getAuthorsList() {
-        $authors = Mage::getModel('practicetestimonials/authors')->getCollection()->load();
+        $authors = Mage::getModel('practicetestimonials/testimonials')->getCollection()->load();
         $output = array();
         foreach($authors as $author){
-            $output[$author->getId()] = $author->getAuthor();
+            $output[$author->getCustomerId()] = $author->getCustomerId();
         }
         return $output;
     }
     public function getAuthorsOptions() {
-        $authors = Mage::getModel('practicetestimonials/authors')->getCollection()->load();
+        $authors = Mage::getModel('practicetestimonials/testimonials')->getCollection()->load();
         $options = array();
         $options[] = array(
             'label' => '',
@@ -17,7 +17,7 @@ class Practice_Testimonials_Helper_Data extends Mage_Core_Helper_Abstract {
         );
         foreach ($authors as $author) {
             $options[] = array(
-                'label' => $author->getAuthor(),
+                'label' => $author->getCustomerId(),
                 'value' => $author->getId(),
             );
         }

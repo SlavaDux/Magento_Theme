@@ -27,9 +27,6 @@
                     <testimonials>
                         <table>testimonials</table>
                     </testimonials>
-                    <authors>
-                        <table>authors</table>
-                    </authors>
                 </entities>
             </practicetestimonials_resource>
         </models><!--name of new table-->

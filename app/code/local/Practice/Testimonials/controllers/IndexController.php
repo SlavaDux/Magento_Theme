@@ -5,17 +5,20 @@ class Practice_Testimonials_IndexController extends Mage_Core_Controller_Front_A
         $this->renderLayout();
     }
     public function saveAction() {
-        $author = $this->getRequest()->getPost('author');
-        $author2 = $this->getRequest()->getPost('author');
-        $content = $this->getRequest()->getPost('content');
-        if(isset($author)&&($content!='') && isset($content)&&($author!='')) {
-            $contact = Mage::getModel('practicetestimonials/testimonials');
-            $contact->setData('author', $author);
-            $contact->setData('content', $content);
-            $contact->save();
-            $contact = Mage::getModel('practicetestimonials/authors');
-            $contact->setData('author', $author2);
-            $contact->save();
+        if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+            $customerData = Mage::getSingleton('customer/session')->getCustomer();
+            $author = $customerData->getName();
+            $content = $this->getRequest()->getPost('content');
+            if(isset($author)&&($content!='') && isset($content)&&($author!='')) {
+                $contact = Mage::getModel('practicetestimonials/testimonials');
+                $contact->setData('customer_id', $author);
+                $contact->setData('content', $content);
+                $contact->save();
+                Mage::getSingleton('core/session')->addSuccess('Your testimonial was successfully added');
+            }
+            else {
+                Mage::getSingleton('core/session')->addError('You have not filled all the fields in the form, fill it and try again');
+            }
         }
         $this->_redirect('testimonials/index/index');
     }
