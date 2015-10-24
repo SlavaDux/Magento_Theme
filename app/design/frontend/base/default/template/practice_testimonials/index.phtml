@@ -50,7 +50,10 @@
             </p>
             <div class="triangle-down"></div>
             <h5 class="testimonials-author">
-                <?php echo $testimonial->getCustomerId(); ?>
+                <?php $cusId =  $testimonial->getCustomerId(); ?>
+                <?php $customerFromId = Mage::getModel('customer/customer')->load($cusId);
+                   echo  $customerFromId->getName();
+                ?>
             </h5>
         <?php endforeach; ?>
         <?php echo $this->getPagerHtml(); ?>

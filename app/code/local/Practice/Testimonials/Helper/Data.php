@@ -1,24 +1,32 @@
 <?php
 class Practice_Testimonials_Helper_Data extends Mage_Core_Helper_Abstract {
     public function getAuthorsList() {
-        $authors = Mage::getModel('practicetestimonials/testimonials')->getCollection()->load();
+        $customers = Mage::getModel('customer/customer')->getCollection()
+                        ->addAttributeToSelect('firstname')
+                        ->addAttributeToSelect('lastname');
         $output = array();
-        foreach($authors as $author){
-            $output[$author->getCustomerId()] = $author->getCustomerId();
+        foreach($customers as $customer){
+            $customerData = $customer->getData();
+            $name = $customerData['firstname'] . " " . $customerData['lastname'];
+            $output[$customer->getEntityId()] = $name;
         }
         return $output;
     }
     public function getAuthorsOptions() {
-        $authors = Mage::getModel('practicetestimonials/testimonials')->getCollection()->load();
+        $customers = mage::getModel('customer/customer')->getCollection()
+                                ->addAttributeToSelect('firstname')
+                                ->addAttributeToSelect('lastname');
         $options = array();
         $options[] = array(
             'label' => '',
             'value' => ''
         );
-        foreach ($authors as $author) {
+        foreach ($customers as $customer) {
+            $customerData = $customer->getData();
+            $name = $customerData['firstname'] . " " . $customerData['lastname'];
             $options[] = array(
-                'label' => $author->getCustomerId(),
-                'value' => $author->getId(),
+                'label' => $name,
+                'value' => $customerData['entity_id']
             );
         }
         return $options;

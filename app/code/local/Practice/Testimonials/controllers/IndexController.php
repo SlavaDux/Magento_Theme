@@ -7,7 +7,7 @@ class Practice_Testimonials_IndexController extends Mage_Core_Controller_Front_A
     public function saveAction() {
         if(Mage::getSingleton('customer/session')->isLoggedIn()) {
             $customerData = Mage::getSingleton('customer/session')->getCustomer();
-            $author = $customerData->getName();
+            $author = $customerData->getId();
             $content = $this->getRequest()->getPost('content');
             if(isset($author)&&($content!='') && isset($content)&&($author!='')) {
                 $contact = Mage::getModel('practicetestimonials/testimonials');

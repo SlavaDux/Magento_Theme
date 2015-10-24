@@ -6,6 +6,6 @@ $installer->getConnection()->changeColumn($tableTestimonials, 'author', 'custome
     'comment'   => 'Testimonials Author',
     'default'   => '0',
     'nullable'  => false,
-    'type'      => 'text'
+    'type'      => Varien_Db_Ddl_Table::TYPE_INTEGER
 ));
 $installer->endSetup();
