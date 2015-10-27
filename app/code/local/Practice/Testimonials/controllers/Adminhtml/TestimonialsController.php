@@ -69,4 +69,29 @@ class Practice_Testimonials_Adminhtml_TestimonialsController extends Mage_Adminh
         }
         $this->_redirect('*/*');
     }
+
+    public function massStatusAction() {
+        $testimonialsId = $this->getRequest()->getParam('testimonials');
+        $status     = $this->getRequest()->getParam('status');
+        $data = array('status'=>$status);
+        try {
+            foreach ($testimonialsId as $id) {
+                $model = Mage::getModel('practicetestimonials/testimonials')->load($id)->addData($data);
+                $model->setId($id)->save();
+            }
+            $this->_getSession()->addSuccess(
+                $this->__('Total of %d testimonial(s) have been updated.', count($testimonialsId))
+            );
+        }
+        catch (Mage_Core_Model_Exception $e) {
+            $this->_getSession()->addError($e->getMessage());
+        } catch (Mage_Core_Exception $e) {
+            $this->_getSession()->addError($e->getMessage());
+        } catch (Exception $e) {
+            $this->_getSession()
+                ->addException($e, $this->__('An error occurred while updating the testimonial(s) status.'));
+        }
+
+        $this->_redirect('*/*');
+    }
 }

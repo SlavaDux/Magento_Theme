@@ -26,6 +26,15 @@ class Practice_Testimonials_Block_Adminhtml_Testimonials_Edit_Form extends Mage_
             'name' => 'customer_id',
             'values' => $helper->getAuthorsOptions()
         ));
+        $fieldset->addField('status', 'select', array(
+            'label' => $helper->__('Status'),
+            'name' => 'status',
+            'required' => true,
+            'options' => array(
+                1 => 'Enabled',
+                0 => 'Disabled'
+            )
+        ));
         $form->setUseContainer(true);
         if($data = Mage::getSingleton('adminhtml/session')->getFormData()){
             $form->setValues($data);

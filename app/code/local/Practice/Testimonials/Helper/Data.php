@@ -6,9 +6,8 @@ class Practice_Testimonials_Helper_Data extends Mage_Core_Helper_Abstract {
                         ->addAttributeToSelect('lastname');
         $output = array();
         foreach($customers as $customer){
-            $customerData = $customer->getData();
-            $name = $customerData['firstname'] . " " . $customerData['lastname'];
-            $output[$customer->getEntityId()] = $name;
+            $name = $customer->getName();
+            $output[$customer->getId()] = $name;
         }
         return $output;
     }
@@ -22,11 +21,10 @@ class Practice_Testimonials_Helper_Data extends Mage_Core_Helper_Abstract {
             'value' => ''
         );
         foreach ($customers as $customer) {
-            $customerData = $customer->getData();
-            $name = $customerData['firstname'] . " " . $customerData['lastname'];
+            $name = $customer->getName();
             $options[] = array(
                 'label' => $name,
-                'value' => $customerData['entity_id']
+                'value' => $customer->getId()
             );
         }
         return $options;

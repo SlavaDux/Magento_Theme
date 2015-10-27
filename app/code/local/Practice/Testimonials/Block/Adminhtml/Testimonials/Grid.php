@@ -30,6 +30,16 @@ class Practice_Testimonials_Block_Adminhtml_Testimonials_Grid extends Mage_Admin
             'type'  => 'options',
             'width' => '150px'
         ));
+        $this->addColumn('status', array(
+            'header' => $helper->__('status'),
+            'index' => 'status',
+            'type'  => 'options',
+            'width' => '150',
+            'options' => array(
+                1 => $helper->__('Enabled'),
+                0 => $helper->__('Disabled')
+            )
+        ));
         return parent::_prepareColumns();
     }
     protected function _prepareMassaction() {
@@ -40,6 +50,21 @@ class Practice_Testimonials_Block_Adminhtml_Testimonials_Grid extends Mage_Admin
             'label' => $this->__('Delete'),
             'url' => $this->getUrl('*/*/massDelete'),
             'confirm' => Mage::helper('practicetestimonials')->__('Are you sure?')
+        ));
+
+        $statuses = Mage::getModel('practicetestimonials/testimonials')->getOptionArray();
+        $this->getMassactionBlock()->addItem('status', array(
+            'label'=> $this->__('Change status'),
+            'url'  => $this->getUrl('*/*/massStatus', array('_current'=>true)),
+            'additional' => array(
+                'visibility' => array(
+                    'name' => 'status',
+                    'type' => 'select',
+                    'class' => 'required-entry',
+                    'label' => Mage::helper('practicetestimonials')->__('Status'),
+                    'values' => $statuses
+                )
+            )
         ));
         return $this;
     }

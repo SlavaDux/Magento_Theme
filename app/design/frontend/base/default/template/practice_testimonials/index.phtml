@@ -52,7 +52,7 @@
             <h5 class="testimonials-author">
                 <?php $cusId =  $testimonial->getCustomerId(); ?>
                 <?php $customerFromId = Mage::getModel('customer/customer')->load($cusId);
-                   echo  $customerFromId->getName();
+                echo  $customerFromId->getName();
                 ?>
             </h5>
         <?php endforeach; ?>
