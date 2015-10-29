@@ -58,6 +58,26 @@
         </routers>
     </frontend><!--registration controllers-->
     <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <practicetestimonials translate="title" module="practicetestimonials">
+                                            <title>Testimonials Section</title>
+                                            <sort_order>99</sort_order>
+                                        </practicetestimonials>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl><!--add new section to system config general-->
         <menu>
             <practicetestimonials module="practicetestimonials">
                 <title>Testimonials</title>

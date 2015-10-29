@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<config>
+    <sections>
+        <practicetestimonials translate="label" module="practicetestimonials">
+            <label>SEO Testimonials</label>
+            <tab>general</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1002</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <practicetestimonials translate="label">
+                    <label>HTML Head</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <practicetestimonials_title translate="label">
+                            <label>Testimonials Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </practicetestimonials_title>
+
+                        <practicetestimonials_description translate="label">
+                            <label>Testimonials Description</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </practicetestimonials_description>
+
+                        <practicetestimonials_keywords translate="label">
+                            <label>Testimonials Keywords</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </practicetestimonials_keywords>
+                    </fields>
+                </practicetestimonials>
+
+            </groups>
+        </practicetestimonials>
+    </sections>
+</config>

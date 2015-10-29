@@ -2,6 +2,12 @@
 class Practice_Testimonials_IndexController extends Mage_Core_Controller_Front_Action {
     public function indexAction() {
         $this->loadLayout();
+
+        $head = $this->getLayout()->getBlock('head');
+        $head->setTitle($this->getTitle());
+        $head->setDescription($this->getDescription());
+        $head->setKeywords($this->getKeywords());
+
         $this->renderLayout();
     }
     public function saveAction() {
@@ -32,5 +38,20 @@ class Practice_Testimonials_IndexController extends Mage_Core_Controller_Front_A
     }
     public function getPagerHtml() {
         return $this->getChildHtml('pager');
+    }
+    public function getTitle() {
+        return Mage::getStoreConfig('practicetestimonials/practicetestimonials/practicetestimonials_title');
+    }
+    public function getDescription() {
+        if (empty($this->_data['description'])) {
+            $this->_data['description'] = Mage::getStoreConfig('practicetestimonials/practicetestimonials/practicetestimonials_description');
+        }
+        return $this->_data['description'];
+    }
+    public function getKeywords() {
+        if (empty($this->_data['keywords'])) {
+            $this->_data['keywords'] = Mage::getStoreConfig('practicetestimonials/practicetestimonials/practicetestimonials_keywords');
+        }
+        return $this->_data['keywords'];
     }
 }
