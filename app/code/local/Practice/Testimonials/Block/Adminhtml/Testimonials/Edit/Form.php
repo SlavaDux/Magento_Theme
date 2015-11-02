@@ -20,10 +20,10 @@ class Practice_Testimonials_Block_Adminhtml_Testimonials_Edit_Form extends Mage_
             'required' => true,
             'name' => 'content'
         ));
-        $fieldset->addField('author', 'select', array(
+        $fieldset->addField('customer_id', 'select', array(
             'label' => $helper->__('Author'),
-            'required' => true,
             'name' => 'customer_id',
+            'required' => true,
             'values' => $helper->getAuthorsOptions()
         ));
         $fieldset->addField('status', 'select', array(

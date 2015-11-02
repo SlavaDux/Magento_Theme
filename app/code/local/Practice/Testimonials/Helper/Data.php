@@ -16,15 +16,12 @@ class Practice_Testimonials_Helper_Data extends Mage_Core_Helper_Abstract {
                                 ->addAttributeToSelect('firstname')
                                 ->addAttributeToSelect('lastname');
         $options = array();
-        $options[] = array(
-            'label' => '',
-            'value' => ''
-        );
         foreach ($customers as $customer) {
             $name = $customer->getName();
+            $id = $customer->getId();
             $options[] = array(
                 'label' => $name,
-                'value' => $customer->getId()
+                'value' => $id
             );
         }
         return $options;

@@ -26,8 +26,8 @@ class Practice_Testimonials_Block_Adminhtml_Testimonials_Grid extends Mage_Admin
         $this->addColumn('author', array(
             'header' => $helper->__('Author'),
             'index' => 'customer_id',
-            'options' => $helper->getAuthorsList(),
             'type'  => 'options',
+            'options' => $helper->getAuthorsList(),
             'width' => '150px'
         ));
         $this->addColumn('status', array(

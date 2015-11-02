@@ -20,7 +20,7 @@ class Practice_Testimonials_IndexController extends Mage_Core_Controller_Front_A
                 $contact->setData('customer_id', $author);
                 $contact->setData('content', $content);
                 $contact->save();
-                Mage::getSingleton('core/session')->addSuccess('Your testimonial was successfully added');
+                Mage::getSingleton('core/session')->addSuccess('Your testimonial will be added after checking the site administrator');
             }
             else {
                 Mage::getSingleton('core/session')->addError('You have not filled all the fields in the form, fill it and try again');
